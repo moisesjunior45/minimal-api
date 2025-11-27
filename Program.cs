@@ -4,10 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using MinimalApi.Dominio.Interfaces;
 using MinimalApi.Dominio.Servicos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAdministradorServico, AdministradorServico>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DbContexto>(options =>
 {
@@ -18,6 +22,7 @@ builder.Services.AddDbContext<DbContexto>(options =>
 });
 
 var app = builder.Build();
+
 
 app.MapGet("/", () => "Olá pessoal");
 
@@ -32,6 +37,9 @@ app.MapPost("/login", ([FromBody] LoginDTO loginDTO, IAdministradorServico admin
         return Results.Unauthorized();
     }
 });
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
 
