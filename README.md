@@ -22,26 +22,6 @@ Antes de rodar o projeto, certifique-se de ter instalado:
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) (opcional, para gerenciar o banco)
 - [Visual Studio Code](https://code.visualstudio.com/) ou [Visual Studio](https://visualstudio.microsoft.com/)
 
-## Como rodar o projeto
-### Passos
-```BASH
-# Clone o repositório
-git clone https://github.com/moisesjunior45/minimal-api
-
-# Acesse a pasta do projeto
-cd minimal-api
-
-# Restaure as dependências
-dotnet restore
-
-# Compile e rode a aplicação
-dotnet run
-```
-A aplicação estará disponível em:
-```BASH
-http://localhost:5134/swagger
-```
-
 ### Configuração do Banco de Dados
 
 Este projeto utiliza **MySQL** como banco de dados. Você pode usar o servidor MySQL do **XAMPP** ou gerenciar via **MySQL Workbench** (opcional).
@@ -64,6 +44,25 @@ CREATE DATABASE minimal_api_veiculos;
 ```BASH
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+```
+## Como rodar o projeto
+### Passos
+```BASH
+# Clone o repositório
+git clone https://github.com/moisesjunior45/minimal-api
+
+# Acesse a pasta do projeto
+cd minimal-api
+
+# Restaure as dependências
+dotnet restore
+
+# Compile e rode a aplicação
+dotnet run
+```
+A aplicação estará disponível em:
+```BASH
+http://localhost:5134/swagger
 ```
 
 ## Autenticação JWT
