@@ -28,13 +28,13 @@ Este projeto utiliza **MySQL** como banco de dados. Você pode usar o servidor M
 
 1. Crie o banco.
 ```SQL
-CREATE DATABASE minimal_api_veiculos;
+CREATE DATABASE minimal_api;
 ```
 2. Configure a connection string no arquivo appsettings.json:
 ```JSON
 {
   "ConnectionStrings": {
-    "Mysql": "Server=localhost;Database=minimal_api_veiculos;User=root;Password=suasenha;"
+    "Mysql": "Server=localhost;Database=minimal_api;User=root;Password=suasenha;"
   },
   "Jwt": "minimal-api-secret-key-1234567890-abcdef"
 }
